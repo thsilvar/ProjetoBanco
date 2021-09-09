@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from './colors';
 
 export const styles = StyleSheet.create({
     container:{
@@ -16,6 +17,7 @@ export const styles = StyleSheet.create({
         fontWeight:'bold',
         margin:4,
         alignItems:'center'
+        
     },
     genero:{       
         borderColor:'black',
@@ -27,6 +29,10 @@ export const styles = StyleSheet.create({
     label:{
         paddingRight:20,
         fontSize:20,
+        padding: 2,
+        marginVertical: 5,
+        marginLeft:5,
+        marginRight:10,
        
     },
     switch:{
@@ -34,9 +40,37 @@ export const styles = StyleSheet.create({
         
     },
     switchBox:{
-        flex: 0.1,
+        flex: 6,
         flexDirection:'row',
         justifyContent:'space-between',
+        padding: 10,
+    },
+    button:{
+        padding: 10,
+        backgroundColor: colors.btn2,
+        marginVertical: 5,
+        marginLeft:4,
+        borderRadius: 30,
+        flexDirection:'row',
+    },
+    textButton:{
+        color: colors.white
+    },
+    picker:{
+        padding: 10,
+        flex:1,
+        marginVertical: 5,
+        borderRadius: 2,
+        marginLeft:10,
+        marginRight:10,
+        borderColor: colors.LightGray
+    },
+    slider:{
+        padding: 2,
+        flex:1,
+        marginVertical: 5,
+        marginLeft:5,
+        marginRight:10,
     }
 
 })

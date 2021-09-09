@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View,Picker} from 'react-native';
+import { View} from 'react-native';
 import {Text , TextInput , Switch} from 'react-native-paper';
-import { styles } from '../src/Styles';
+import { styles } from '../styles/Styles';
 import Slider from '@react-native-community/slider';
-import DropDownPicker from 'react-native-dropdown-picker';
+import Pickers from './Pickers';
+import Button from './Button';
+
 
 const Input = () =>{
 
@@ -11,14 +13,9 @@ const Input = () =>{
     const [nome, setNome] = useState('');
     const [idade, setIdade] = useState();
     const [limite, setLimite] = useState(0);
-  
+    const [ genero, setGenero] = useState();
 
-      const [open, setOpen] = useState(false);
-      const [value, setValue] = useState(null);
-      const [items, setItems] = useState([
-        {label: 'Masculino', value: 'Masculino'},
-        {label: 'Feminino', value: 'Feminino'}
-      ]);
+    
 
 
     const [estudate, setEstudante] = useState(false);
@@ -29,7 +26,7 @@ const Input = () =>{
 
  return(
     <View>
-        <Text style={styles.text}>Cadastro do Banco</Text>
+        <Text style={styles.label}>Cadastro do Banco</Text>
         
 
         <TextInput
@@ -39,23 +36,7 @@ const Input = () =>{
             onChangeText={nome => setNome(nome)}
         />
         
-        <DropDownPicker
-            placeholderStyle={{
-                color: "Black",
-                fontWeight: "bold"
-              }}
-            placeholder="Selecione seu Genero"
-            style={styles.genero}
-            multiple={true}
-            min={0}
-            max={5}
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-        />
+        <Pickers/>
 
         <TextInput
             label="Digite sua idade"
@@ -66,6 +47,7 @@ const Input = () =>{
         />
         <Text style={styles.label}>Limite: {limite}</Text>
         <Slider
+            style={styles.slider}
             value={limite}
             onSlidingStart={(limite) => limite ? setLimite(parseInt(limite)) : setLimite(limite + 100)}
             minimumValue={250}
@@ -75,7 +57,7 @@ const Input = () =>{
             <Text style={styles.label}>Estudante:</Text>
             <Switch style={styles.switch } value={estudate} onValueChange={onEstudante} />
         </View>
-         
+
     </View>
     
 
