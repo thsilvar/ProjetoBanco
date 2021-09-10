@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import {TouchableOpacity, Text, View } from 'react-native';
+import {View } from 'react-native';
 import colors from '../styles/colors';
 import { styles } from '../styles/Styles';
+import {Text , Button} from 'react-native-paper';
 
 
-
-const Button = () =>{
+const ButtonMy = ({text, onPress }) =>{
 
  return(
-    
-        <TouchableOpacity
-            style={styles.button}
-        >
-            <Text style={styles.textButton}> teste4</Text>
-        </TouchableOpacity>
 
-    
+        <Button
+            style={styles.button}
+            onPress={onPress}
+        >
+            <Text style={styles.textButton}>{text}</Text>
+        </Button>
+
+
 
   );
 }
 
 
-export default Button
+export default ButtonMy

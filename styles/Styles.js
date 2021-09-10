@@ -17,14 +17,14 @@ export const styles = StyleSheet.create({
         fontWeight:'bold',
         margin:4,
         alignItems:'center'
-        
+
     },
-    genero:{       
+    genero:{
         borderColor:'black',
         opacity: 0.5,
         fontSize: 15,
         fontWeight: "bold",
-        
+
     },
     label:{
         paddingRight:20,
@@ -33,11 +33,11 @@ export const styles = StyleSheet.create({
         marginVertical: 5,
         marginLeft:5,
         marginRight:10,
-       
+
     },
     switch:{
         margin:4,
-        
+
     },
     switchBox:{
         flex: 6,
@@ -46,15 +46,18 @@ export const styles = StyleSheet.create({
         padding: 10,
     },
     button:{
-        padding: 10,
+      padding: 5,
         backgroundColor: colors.btn2,
-        marginVertical: 5,
-        marginLeft:4,
+        marginVertical: 2,
+        marginLeft:2,
         borderRadius: 30,
         flexDirection:'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     textButton:{
-        color: colors.white
+        color: colors.white,
+
     },
     picker:{
         padding: 10,

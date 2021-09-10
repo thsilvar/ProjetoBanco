@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import Button from '../components/Button';
 import Pickers from '../components/Pickers';
@@ -10,10 +10,8 @@ const Banco = () =>{
  return(
     <View style={styles.container}>
          <Input/>
-         <View >
-            <Button/>
-         </View>
-         
+
+
 
     </View>
 

@@ -1,33 +1,39 @@
 import React, { useState } from 'react';
-import { View} from 'react-native';
-import {Text , TextInput , Switch} from 'react-native-paper';
+import { View, Picker, Alert} from 'react-native';
+import {Text , TextInput , Switch,Button} from 'react-native-paper';
 import { styles } from '../styles/Styles';
 import Slider from '@react-native-community/slider';
 import Pickers from './Pickers';
-import Button from './Button';
+import ButtonMy from './Button';
+
 
 
 const Input = () =>{
 
-   
+
     const [nome, setNome] = useState('');
     const [idade, setIdade] = useState();
     const [limite, setLimite] = useState(0);
     const [ genero, setGenero] = useState();
-
-    
-
-
     const [estudate, setEstudante] = useState(false);
 
     const onEstudante= () => setEstudante(!estudate);
-    
-    
+
+
+   const reset = () =>{
+    setNome('')
+    setIdade('')
+    setLimite(0)
+    setGenero('Selecione o Sexo')
+    setEstudante(false)
+   }
+
+
 
  return(
     <View>
         <Text style={styles.label}>Cadastro do Banco</Text>
-        
+
 
         <TextInput
             label="Digite seu nome"
@@ -35,8 +41,16 @@ const Input = () =>{
             value={nome}
             onChangeText={nome => setNome(nome)}
         />
-        
-        <Pickers/>
+
+        <Picker
+        style ={styles.picker}
+			onValueChange={genero => setGenero(genero)}
+			selectedValue={genero}
+		>
+            <Picker.Item label={'Selecione o Sexo'} value={'null'} />
+            <Picker.Item label={'Masculino'} value={'Masculino'} />
+		    <Picker.Item label={'Feminino'} value={'Feminino'} />
+		</Picker>
 
         <TextInput
             label="Digite sua idade"
@@ -56,13 +70,27 @@ const Input = () =>{
         <View style={styles.switchBox }>
             <Text style={styles.label}>Estudante:</Text>
             <Switch style={styles.switch } value={estudate} onValueChange={onEstudante} />
+
         </View>
 
+        <View >
+
+
+            <ButtonMy
+               text="Abrir conta"
+               onPress={() => alert("Sua conta foi criada!\n\nNome: " + nome + "\nIdade: " + idade + "\nGênero: " + genero + "\nLimite: R$ " + limite + "\nEstudante:" + estudate)}
+            />
+            <ButtonMy
+               text="Resetar"
+               onPress={reset}
+            />
+         </View>
     </View>
-    
+
 
   );
 }
+
 
 
 export default Input
