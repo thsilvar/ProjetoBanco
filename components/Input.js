@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Picker, Alert} from 'react-native';
 import {Text , TextInput , Switch,Button} from 'react-native-paper';
 import { styles } from '../styles/Styles';
@@ -26,6 +26,17 @@ const Input = () =>{
     setLimite(0)
     setGenero('Selecione o Sexo')
     setEstudante(false)
+   }
+
+   function abrirConta(){
+        if(nome==''){
+            alert("Preencha os valores")
+        }
+        else{
+            alert("Sua conta foi criada!\n\nNome: " + nome + "\nIdade: " + idade + "\nGênero: " + genero + "\nLimite: R$ " + limite + "\nEstudante:" + estudate)
+        }
+
+
    }
 
 
@@ -78,7 +89,8 @@ const Input = () =>{
 
             <ButtonMy
                text="Abrir conta"
-               onPress={() => alert("Sua conta foi criada!\n\nNome: " + nome + "\nIdade: " + idade + "\nGênero: " + genero + "\nLimite: R$ " + limite + "\nEstudante:" + estudate)}
+              // onPress={() => alert("Sua conta foi criada!\n\nNome: " + nome + "\nIdade: " + idade + "\nGênero: " + genero + "\nLimite: R$ " + limite + "\nEstudante:" + estudate)}
+              onPress={() => abrirConta()}
             />
             <ButtonMy
                text="Resetar"
