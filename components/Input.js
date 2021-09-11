@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { View, Picker, Alert} from 'react-native';
+import { View,  Alert} from 'react-native';
 import {Text , TextInput , Switch,Button} from 'react-native-paper';
 import { styles } from '../styles/Styles';
 import Slider from '@react-native-community/slider';
-import Pickers from './Pickers';
 import ButtonMy from './Button';
+import { Picker } from '@react-native-picker/picker';
+
 
 
 
