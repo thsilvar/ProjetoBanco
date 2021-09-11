@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { View, Picker, Alert} from 'react-native';
 import {Text , TextInput , Switch,Button} from 'react-native-paper';
 import { styles } from '../styles/Styles';
@@ -38,6 +38,11 @@ const Input = () =>{
 
 
    }
+
+
+   useEffect(()=>{
+
+   }, [limite])
 
 
 
